@@ -1,0 +1,81 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Development Server",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Build Project",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$tsc"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "Start Production Server",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"start"
+			],
+			"dependsOn": "Build Project",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Clean Build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"clean"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			}
+		}
+	]
+}

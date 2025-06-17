@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bali-pay-api
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+    domains:
+      - bali-pay-api.onrender.com
